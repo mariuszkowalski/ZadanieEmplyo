@@ -327,6 +327,8 @@ Każdy Cache ma inny TTL. Team oraz VacationPackage najdłuższy - najrzadziej s
 Dao zawierają tylko proste metody, odpytywanie pojedynczej tabeli, tworzenie, modyfikowanie oraz usuwanie danych z tej tabeli.
 Zapytania o ilość pozostałych dni wolnych, o to czy pracownik, może wziąć urlop oraz o zespół bez dni urlopowych zostały umieszczone w repozytoriach raportów, aby nie zaśmiecać dao. Są różne podejścia do tego problemu, wybrałem akurat takie.
 
+Zdaję sobie sprawę, że `Dao` nie są asynchroniczne, ponieważ jest to mała konsolowa aplikacja, a zapytania też nie są duże. W aplikacji normalnej wielkości powinny być asynchroniczne.
+
 Aby lepiej odseparować "Widok", za który odpowiada tutaj konsolowa aplikacja. Employee, Vacation etc. dostały swoje dedykowane `Dto`. Są one małe, więc wybrałem opcję ręcznego mapowania.
 
 #### Services.
